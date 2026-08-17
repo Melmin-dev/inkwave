@@ -27,7 +27,7 @@ router.post("/story/:storyId", requireAuth, async (req: AuthRequest, res, next) 
     const count = await prisma.chapter.count({ where: { storyId: req.params.storyId } });
 
     const chapter = await prisma.chapter.create({
-      data: { ...data, storyId: req.params.storyId, order: count },
+      data: { title: data.title, content: data.content, storyId: req.params.storyId, order: count },
     });
     res.status(201).json(chapter);
   } catch (err: any) {
