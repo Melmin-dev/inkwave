@@ -1,0 +1,16 @@
+# Dépendances
+node_modules/
+
+# Variables d'environnement / Clés secrètes
+.env
+.env.example
+
+# Fichiers compilés TypeScript
+dist/
+build/
+
+# Base de données SQLite locale & fichiers temporaires
+*.db
+*.db-journal
+uploads/
+*.log

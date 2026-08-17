@@ -1,0 +1,16 @@
+export const colors = {
+  ink50: "#fdf3f7",
+  ink100: "#fbe4ee",
+  ink500: "#d63e82",
+  ink600: "#bc2569",
+  ink700: "#9b1a56",
+  neutral50: "#fafafa",
+  neutral200: "#e5e5e5",
+  neutral400: "#a3a3a3",
+  neutral500: "#737373",
+  neutral700: "#404040",
+  neutral900: "#171717",
+  white: "#ffffff",
+  red600: "#dc2626",
+  amber600: "#d97706",
+};

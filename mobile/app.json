@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "InkWave",
+    "slug": "inkwave",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#d63e82"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.inkwave.app"
+    },
+    "android": {
+      "package": "com.inkwave.app"
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-status-bar"
+    ]
+  }
+}
