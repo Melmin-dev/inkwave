@@ -43,8 +43,16 @@ router.post("/", requireAuth, async (req: AuthRequest, res, next) => {
     if (!data.storyId && !data.chapterId) {
       return res.status(400).json({ error: "storyId ou chapterId requis" });
     }
+    if (data.storyId && data.chapterId) {
+      return res.status(400).json({ error: "Choisissez soit storyId soit chapterId" });
+    }
+
+    const commentData = data.storyId
+      ? { content: data.content, storyId: data.storyId, userId: req.userId! }
+      : { content: data.content, chapterId: data.chapterId!, userId: req.userId! };
+
     const comment = await prisma.comment.create({
-      data: { ...data, userId: req.userId! },
+      data: commentData,
       include: { user: { select: { username: true, displayName: true, avatarUrl: true } } },
     });
     res.status(201).json(comment);

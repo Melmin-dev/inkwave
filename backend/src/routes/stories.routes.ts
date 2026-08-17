@@ -46,7 +46,15 @@ router.post("/", requireAuth, async (req: AuthRequest, res, next) => {
   try {
     const data = storySchema.parse(req.body);
     const story = await prisma.story.create({
-      data: { ...data, authorId: req.userId! },
+      data: { 
+        title: data.title,
+        description: data.description,
+        coverUrl: data.coverUrl,
+        genre: data.genre,
+        tags: data.tags,
+        status: data.status,
+        authorId: req.userId!,
+      },
     });
     res.status(201).json(story);
   } catch (err: any) {
